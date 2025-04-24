@@ -7,22 +7,24 @@ from tkinter import ttk, messagebox, filedialog
 from tkinterdnd2 import TkinterDnD, DND_FILES
 from PyPDF2 import PdfMerger
 
-## App in a Class
+
+## pyinstaller --onefile --windowed --add-data "<ruta_a_tkinterdnd2>\tkdnd;tkinterdnd2\tkdnd" chain_PDFs_deep.py
+## pyinstaller --onefile --windowed --add-data "C:\Users\jmonti\AppData\Local\Programs\Python\Python311\Lib\site-packages\tkinterdnd2\tkdnd;tkinterdnd2\tkdnd" chain_PDFs_deep.py
+
 #pyinstaller --onefile mi_programa.py
 #pyinstaller --onefile --windowed mi_programa.py
 #pyinstaller --onefile --windowed --add-data "C:\Users\Usuario\Documents\mi_programa.py;." mi_programa.py
 #pyinstaller --onefile --windowed --add-data "C:\Users\Usuario\Documents\mi_programa.py;." --add-data "C:\Users\Usuario\Documents\mi_programa.py;." mi_programa.py
-
 # pyinstaller --onefile --windowed --add-data "C:\Users\jm\AppData\Local\Programs\Python\Python311\Lib\site-packages\tkinterdnd2\tkdnd;." chain_PDFs_deep.py
-
 # pyinstaller --onefile --windowed --add-data "C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." chain_PDFs_deep.py
 # pyinstaller --onefile --windowed --add-data "C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." --add-data "C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." chain_PDFs_deep.py
 
 # python -m nuitka --standalone --windows-disable-console --onefile chain_PDFs_deep.py --include-package=tkinterdnd2 --include-package=PyPDF2 --include-data-dir="C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." --include-data-dir="C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." --output-dir=dist chain_PDFs_deep.py
 # python -m nuitka --standalone ----windows-console-mode=disable --onefile chain_PDFs_deep.py --include-package=tkinterdnd2 --include-package=PyPDF2 --include-data-dir="C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." --include-data-dir="C:\Users\jm\Documents\ChainPDFs\pys\chain_PDFs_deep.py;." --output-dir=dist chain_PDFs_deep.py
-
 # python -m nuitka --standalone --windows-console-mode=disable --onefile --enable-plugin=tk-inter chain_PDFs_deep.py
 
+
+## App in a Class
 class PDFMergerApp(TkinterDnD.Tk):
     def __init__(self):
         super().__init__()
